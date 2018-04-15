@@ -1142,14 +1142,51 @@ print y
  #   print match
 
 '''
+######################################################## 
+# string w3 resources 
+
+'''
+x = 'www.google.com'
+dictionary = {}
+
+for letters in x:
+
+    keys = dictionary.keys()
+
+    if letters in keys:
+        dictionary[letters] += 1
+    else:
+        dictionary[letters] = 1 
+
+print dictionary
+
+'''
 
 
+#Write a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself. Go to the editor 
+#Sample String : 'restart'
+#Expected Result : 'resta$t'
+
+'''
+x = 'restart'
+
+char = x[0]
+y = len(x)
+
+new = x.replace(char, '$')
+new = char + new
 
 
+'''
+words_list = ['jhadfkd','nflafl','anfnanflnaf']
+word_len = []
+for n in words_list:
+    word_len.append((len(n), n))
+    print word_len
+    #word_len.sort()
+    #return word_len[-1][1]
 
-
-
-
+#print(find_longest_word(["PHP", "Exercises", "Backend"]))
 
 
 
