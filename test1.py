@@ -69,11 +69,12 @@ print (w)
 
 
 #4
+
 import re
 
 def text_matching(text):
     
-    pattern = 'ab+?'
+    pattern = 'ab{3}'
     if re.search(pattern, text):
         return ('match found')
     else:
@@ -131,14 +132,14 @@ print (w)
 '''
 import re
 def text_match(text):
-        patterns = '^[A-Z][a-z]+?$'
+        patterns = '[a-z]+_$'
         if re.search(patterns,  text):
                 return 'Found a match!'
         else:
                 return('Not matched!')
 
 print(text_match("Aaaa"))
-print(text_match("aab_Abbbc"))
+print(text_match("ADaabAbbbc_"))
 print(text_match("Aaab_abbbc"))
 '''
 
@@ -160,6 +161,7 @@ print(text_match("Aaab_abbbc"))
 
 
 #9
+
 '''
 import re
 def text_match(text):
@@ -174,6 +176,8 @@ print(text_match("aab_Abbbc"))
 print(text_match("Aaab_abbbc"))
 
 '''
+
+
 #10
 '''
 import re
@@ -194,19 +198,20 @@ print(text_match("fsdfsf"))
 '''
 import re
 def text_match(text):
-        patterns = '\w$'
+        patterns = '\w\S*$'
         if re.search(patterns,  text):
                 return 'Found a match!'
         else:
                 return('Not matched!')
 
-print(text_match("aab_cbbbc "))
-print(text_match("aab_Abbbc"))
-print(text_match("Aaab_abbbc"))
+print(text_match("aab_cbbbc."))
+print(text_match("aab_Abbbc "))
+print(text_match("Aaab_abbbc "))
 '''
 
 #12
 '''
+
 import re
 def text_match(text):
         patterns = '\w*z.\w*'
@@ -215,10 +220,9 @@ def text_match(text):
         else:
                 return('Not matched!')
 
-print(text_match("zebra is black"))
+print(text_match("ezbra is black"))
 print(text_match("skhdkahkd  zebra jhaksdk"))
-print(text_match("Aaab_abbbc"))
-
+print(text_match("Aaab_abbzbc"))
 '''
 
 #13
@@ -242,6 +246,7 @@ print(text_match("Aaab_abbbc"))
 '''
 import re
 ip = '22.08.009.06'
+#string = re.sub('\.[0]*','.',ip)
 string = re.sub('\.[0]*','.',ip)
 print string
 '''
@@ -276,7 +281,7 @@ print(text_match("Aaab_abbbc"))
 '''
 import re
 def text_match(text):
-        patterns = '[\d]$'
+        patterns = '\d$'
         if re.search(patterns,  text):
                 return 'Found a match!'
         else:
@@ -284,7 +289,7 @@ def text_match(text):
 
 print(text_match("adad9"))
 print(text_match("%%%%%"))
-print(text_match("Aaab_abbbc"))
+print(text_match("Aaab_abbbc8"))
 
 '''
 
@@ -317,10 +322,26 @@ for pattern in patterns:
         print('Not Matched!')
 
 '''
-
-#21
+#20
 
 '''
+import re
+
+pattern = 'fox'
+text = 'The quick brown fox jumps over the lazy dog.'
+match = re.search(pattern,text)
+
+s = match.start()
+e = match.end()
+
+print('Found "%s" in "%s" from "%d" to "%d"' %(match.re.pattern,text,s,e))
+
+
+'''
+
+#21
+'''
+
 import re
 
 text = 'Python exercises, PHP exercises, C exercises'
@@ -332,6 +353,18 @@ if re.findall(pattern, text):
 '''
 
 #22
+'''
+import re
+
+text = 'Python exercises, PHP exercises, C# exercises'
+pattern = 'exercises'
+
+for match in re.finditer(pattern, text):
+    s = match.start()
+    e = match.end()
+    print('Found "%s" at "%d:%d"' % (text[s:e], s, e))
+
+'''
 
 '''
 import re
@@ -373,13 +406,14 @@ print z
 #25
 '''
 import re
-url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-beckhams-fame-rests-on-one-stupid-little-ball-josh-norman-tells-author/"
+url1= '2016-02-01'
 
 #z = re.findall(r'/(\d{4})/(\d{1,2})/(\d{1,2})', url1)
+#yyyy-mm-dd format to dd-mm-yyyy
 
 x = re.sub(r'(\d{4})-(\d{1,2})-(\d{1,2})', '\\3-\\2-\\1', url1)
+print x
 '''
-
 #26
 '''
 import re
@@ -400,8 +434,9 @@ import re
 text = "Ten 10, Twenty 20, Thirty 30"
 
 x = re.findall(r'\d+',text)
-for i in x:
-	print i
+print x
+#for i in x:
+#	print i
 
 '''
 
@@ -418,20 +453,22 @@ print y
 
 '''
 
-'''#29
-
+#29
+'''
 import re
 # Input.
 text = "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
 
 for m in re.finditer("\d+", text):
-    print(m.group(0))
+    
     print("Index position:", m.start())
+    print ("start and end index position", m.span())
 # .start() --- displays the start position
 # .end() ---- displays the end position
 # .span() ---- displays the start and end position. 
 
-
+'''
+'''
 '''
 #30
 '''
@@ -455,15 +492,18 @@ print(re.sub("[ ,.]", ":", text))
 '''
 import re
 text = 'Python Exercises,,,PHP exercises'
-print(re.sub("[ ,.]", ":", text,2))
+#print(re.sub("[ ,.]", ":", text,2))
 
+x = re.sub('[ ,.]{2}',':',text)
+print x
 '''
+
 #33
 '''
 import re
-x = 'hjhdfhksh hfkah frere'
+x = 'hjhdfhksh hfkah frer gfe jhfg'
 
-y = re.findall(r'\b\w{5}\b', x)
+y = re.findall(r'\b\w{3,5}\b', x)
 print y
 
 '''
@@ -476,8 +516,19 @@ x = 'hjf hfkah frere'
 y = re.findall(r'\b\w{3,5}\b', x)
 print y
 
+#35
+'''
+'''
+import re
+x = 'hgh hghfgh hdghfgh hghg'
+
+y = re.findall(r'\b\w{4,}\b',x)
+print y
+'''
+
 '''
 #36
+'''
 '''
 def camel_to_snake(text):
         import re
@@ -549,7 +600,6 @@ print("Urls: ",urls)
 import re
 text = "PythonTutorialAndExercises"
 print(re.findall('[A-Z][^A-Z]*', text))
-
 '''
 #44
 
@@ -579,6 +629,19 @@ for i in range(1,10):
 
 print d
 '''
+
+#50
+'''
+import re
+Sample_data = ["example (.com)", "w3resource", "github (.com)", "stackoverflow (.com)"]
+
+pattern = '^\W .\ \W$'
+
+x = re.sub(pattern, ' ' ,Sample_data)
+print x
+
+'''
+
 
 #Leetcode  ####################################################################
 
@@ -1030,7 +1093,7 @@ print count
 
 
 #27 Write a Python program to convert a list into a nested dictionary of keys.
-
+'''
 num_list = [1, 2, 3, 4]
 new_dict = current = {}
 for name in num_list:
@@ -1039,22 +1102,46 @@ for name in num_list:
     current = current[name]
     print current
 print(new_dict)
+'''
+
+
+#online test regex
+
+# (([a-zA-Z]{6}[\d]{3}[a-zA-Z\d]+)+[\s]+[a-zA-Z]+([\d])+[\s\d]+[BR,]*[\s]*[a-zA-Z]{0,2}([\d\/]+))
 
 
 
 
 
+'''
+
+x = raw_input('Enter the strings:')
+y = x.split(',')
+
+#sorted_list = []
+
+for items in y:
+
+    z = items.sort()
+    sorted_list.append(z)
+
+print sorted_list
+'''
+
+################################ Hacker rank regex ########
+'''
+import re
+
+x = 'rabcdeefgyYhFjkIoomnpOeorteeeeet'
+y = re.findall('[b-df-hj-np-tv-z]{1,}([aeiouAEIOU]{2,})[b-df-hj-np-tv-z]{1,}',x)
 
 
+print y
 
+#for match in y:
+ #   print match
 
-
-
-
-
-
-
-
+'''
 
 
 
