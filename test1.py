@@ -230,17 +230,20 @@ print(text_match("Aaab_abbzbc"))
 '''
 import re
 def text_match(text):
-        patterns = '\Bz\B'
+        #patterns = '\Bz\B'
+        #patterns = '\bz\b'
+        patterns = '\w+z+\w+'
         if re.search(patterns,  text):
                 return 'Found a match!'
         else:
                 return('Not matched!')
 
-print(text_match("aab_cbbbc"))
-print(text_match("aab_Abbbc"))
+print(text_match(" azd"))
+print(text_match("aab_Abbbz"))
 print(text_match("Aaab_abbbc"))
 
 '''
+
 #16
 
 '''
@@ -258,8 +261,11 @@ string = '5675'
 
 z = re.match('^5',string)
 print z
+
 '''
+
 #14
+
 
 '''
 import re
@@ -334,8 +340,7 @@ match = re.search(pattern,text)
 s = match.start()
 e = match.end()
 
-print('Found "%s" in "%s" from "%d" to "%d"' %(match.re.pattern,text,s,e))
-
+print('Found "%s" in "%s" from "%d" to "%d"' %(pattern,text,s,e))
 
 '''
 
@@ -401,8 +406,8 @@ url1= "https://www.washingtonpost.com/news/football-insider/wp/2016/09/02/odell-
 
 z = re.findall(r'/(\d{4})/(\d{1,2})/(\d{1,2})', url1)
 print z 
-
 '''
+
 #25
 '''
 import re
@@ -414,6 +419,8 @@ url1= '2016-02-01'
 x = re.sub(r'(\d{4})-(\d{1,2})-(\d{1,2})', '\\3-\\2-\\1', url1)
 print x
 '''
+
+
 #26
 '''
 import re
@@ -503,10 +510,10 @@ print x
 import re
 x = 'hjhdfhksh hfkah frer gfe jhfg'
 
-y = re.findall(r'\b\w{3,5}\b', x)
+y = re.findall(r'\b\w{5}\b', x)
 print y
-
 '''
+
 
 #34
 '''
@@ -631,16 +638,17 @@ print d
 '''
 
 #50
-'''
+
 import re
 Sample_data = ["example (.com)", "w3resource", "github (.com)", "stackoverflow (.com)"]
 
-pattern = '^\W .\ \W$'
+pattern = '?\([^)]+\'
 
 x = re.sub(pattern, ' ' ,Sample_data)
 print x
 
-'''
+
+
 
 
 #Leetcode  ####################################################################
@@ -803,7 +811,7 @@ sorted_by_second_element = sorted(x.items(), key=operator.itemgetter(1))
 
 print sorted_by_first_element, sorted_by_second_element
 
-'''
+'''                                                                                  
 
 #2. Write a Python script to add a key to a dictionary.
 
@@ -1178,6 +1186,7 @@ new = char + new
 
 
 '''
+'''
 words_list = ['jhadfkd','nflafl','anfnanflnaf']
 word_len = []
 for n in words_list:
@@ -1188,7 +1197,10 @@ for n in words_list:
 
 #print(find_longest_word(["PHP", "Exercises", "Backend"]))
 
+'''
 
 
 
+
+x = '([a-zA-Z]{6}[\d]{3}[a-zA-Z\d]+)+[\s]+[a-zA-Z]+([\d])+[\s\d]+[BR,]*[\s]*[a-zA-Z]{0,2}([\d\/]+)'
 
