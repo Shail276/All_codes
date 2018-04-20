@@ -638,7 +638,7 @@ print d
 '''
 
 #50
-
+'''q
 import re
 Sample_data = ["example (.com)", "w3resource", "github (.com)", "stackoverflow (.com)"]
 
@@ -646,7 +646,7 @@ pattern = '?\([^)]+\'
 
 x = re.sub(pattern, ' ' ,Sample_data)
 print x
-
+'''
 
 
 
@@ -1201,6 +1201,5 @@ for n in words_list:
 
 
 
-
-x = '([a-zA-Z]{6}[\d]{3}[a-zA-Z\d]+)+[\s]+[a-zA-Z]+([\d])+[\s\d]+[BR,]*[\s]*[a-zA-Z]{0,2}([\d\/]+)'
+#x = '([a-zA-Z]{6}[\d]{3}[a-zA-Z\d]+)+[\s]+[a-zA-Z]+([\d])+[\s\d]+[BR,]*[\s]*[a-zA-Z]{0,2}([\d\/]+)'
 
