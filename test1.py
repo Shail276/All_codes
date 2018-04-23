@@ -1203,3 +1203,84 @@ for n in words_list:
 
 #x = '([a-zA-Z]{6}[\d]{3}[a-zA-Z\d]+)+[\s]+[a-zA-Z]+([\d])+[\s\d]+[BR,]*[\s]*[a-zA-Z]{0,2}([\d\/]+)'
 
+
+
+#10. Write a Python program for counting sort. 
+'''
+import re
+x = "According to Wikipedia In computer science, counting sort is an algorithm for sorting a collection of objects according to keys that are small integers; that is, it is an integer sorting algorithm. It operates by counting the number of objects that have each distinct key value, and using arithmetic on those counts to determine the positions of each key value in the output sequence. Its running time is linear in the number of items and the difference between the maximum and minimum key values, so it is only suitable for direct use in situations where the variation in keys is not significantly greater than the number of items. However, it is often used as a subroutine in another sorting algorithm, radix sort, that can handle larger keys more efficiently"
+
+pattern = 'sort'
+
+match = re.findall(pattern, x)
+#print match
+total_num = len(match)
+print total_num
+
+'''
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# list excersice from w3resources
+
+#71. Write a Python program to check if all dictionaries in a list are empty or not. Go to the editor
+#Sample list : [{},{},{}]
+#Return value : True
+#Sample list : [{1,2},{},{}]
+#Return value : False3
+'''
+x = [{1:2},{}]
+
+for i in x:
+    print i 
+
+'''
+'''
+x = [{1:2},{},{}]
+
+for i in x:
+
+    if len(i) == 0:
+        print 'list is emppty'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    else:
+        print 'list is not emplty'
+
+
+'''
+
+#70 70. Write a Python program to get the depth of a dictionary
+
+'''
+def dict_depth(d):
+    if isinstance(d, dict):
+        return 1 + (max(map(dict_depth, d.values())) if d else 0)
+    return 0
+dic = {'a':1, 'b': {'c': {'d': {}}}}
+print(dict_depth(dic))
+
+
+'''
+
+#69
+
+#Write a Python program to remove duplicates from a list of lists.
+
+x = [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+count = 0
+
+for i in x:
+
+    count += 1 
+    
+    if count > 1:
+        del[i]
+
+print x
+print y 
+
+
+
+
+
+
+
+
