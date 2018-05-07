@@ -1263,7 +1263,7 @@ print(dict_depth(dic))
 #69
 
 #Write a Python program to remove duplicates from a list of lists.
-
+'''
 x = [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
 count = 0
 
@@ -1276,6 +1276,29 @@ for i in x:
 
 print x
 print y 
+
+'''
+
+#dup Linux coursework 
+
+count = 0 
+i = 0
+A = [1,3,9,8,8,9,4,9,9,1]
+while i in range(0,len(A)):
+	B = set(A)
+	A1 = A[i]
+	bb = A[i]
+	A.remove(bb)
+	if bb in B:
+		count = count + 1
+		A.remove(bb)
+	i = i + 1
+print (count)
+
+
+
+
+
 
 
 
