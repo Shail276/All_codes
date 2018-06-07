@@ -1278,7 +1278,7 @@ print x
 print y 
 
 '''
-
+'''
 #dup Linux coursework 
 
 count = 0 
@@ -1295,10 +1295,13 @@ while i in range(0,len(A)):
 	i = i + 1
 print (count)
 
+'''
 
 
+even = False
 
-
+if even = True:
+	print("It is even!")
 
 
 
