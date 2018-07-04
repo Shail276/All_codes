@@ -26,7 +26,8 @@ def compute():
 root.geometry("250x250")
 Name1 = Label(root, text = "Name", font = "Times 12 bold", relief = "solid",
 bg="Yellow")
-Name1.grid(row = 0, column = 0)
+Name1.grid(row = 0, column = 0)\
+
 etName = Entry(root)
 etName.config(background = "Orange")
 etName.grid(row = 0, column = 1)

@@ -1297,12 +1297,17 @@ print (count)
 
 '''
 
-
+'''
 even = False
 
 if even = True:
 	print("It is even!")
+'''
 
+x = 5
+y = 10
+z = x + y
+print z
 
 
 
