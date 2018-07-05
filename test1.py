@@ -4,8 +4,10 @@ import re
 my_regex_str = "Ethernet Routing Switch 3549GTS-PWR+"
 a = re.findall(r"(.{5}).+ (.+?)\s(\d{2,4}).+-(.{4})", my_regex_str)
 z=a[0][2]
-print z 
+print z
+print x
 '''
+
 
 '''
 import re
